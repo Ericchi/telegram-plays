@@ -1,0 +1,17 @@
+{
+  "name": "telegram-plays",
+  "version": "1.0.0",
+  "description": "A bot that reads commands in chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "EricchiYukia",
+  "license": "ISC",
+  "dependencies": {
+    "telegraf": "^4.8.5"
+  },
+  "devDependencies": {
+    "node-key-sender": "^1.0.11"
+  }
+}
