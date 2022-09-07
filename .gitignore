@@ -132,8 +132,9 @@ dist
 # Kate temp files
 *.kate-swp
 
-# Backups
+# Backups etc
 *.bak
+.DS_Store
 
 # Custom stuff
 Notes/*
