@@ -5,6 +5,8 @@ const fs = require("fs");
 
 var ks = require('node-key-sender');
 
+var cron = require('node-cron');
+
 const tokenTxt = fs.readFileSync("token.txt");
 const bot = new Telegraf(tokenTxt)
 
@@ -25,8 +27,12 @@ bot.command('quit', (ctx) => {
 
 var debugga = function Text_Debug(chat_id, first_name, text) {
 
-
 }
+
+cron.schedule('*/10 * * * *', () => {
+  // Autosave
+  ks.sendKey('1');
+});
 
 bot.on('text', (ctx) => {
   // Explicit usage
