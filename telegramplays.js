@@ -32,6 +32,7 @@ var debugga = function Text_Debug(chat_id, first_name, text) {
 cron.schedule('*/10 * * * *', () => {
   // Autosave
   ks.sendKey('1');
+  console.log("Auto-backup");
 });
 
 bot.on('text', (ctx) => {
