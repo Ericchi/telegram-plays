@@ -46,7 +46,7 @@ bot.on('text', (ctx) => {
     // Se inserisci gibberish, ti fa errore con tutte le info sul messaggio
     // a
     
-  switch(ctx.message.text) {
+  switch(ctx.message.text.toLowerCase()) {
     case 'start':
         ks.sendKey('enter');
         break;
