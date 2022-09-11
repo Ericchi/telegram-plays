@@ -16,15 +16,15 @@ ks.setOption('globalDelayBetweenMillisec', 50);
 bot.telegram.getMe().then((botInfo) => {
   bot.options.username = botInfo.username
 })
-
-bot.command('quit', (ctx) => {
+/* Disattivata per debug
+ bot.command('quit', (ctx) => {
   // Explicit usage
   ctx.telegram.leaveChat(ctx.message.chat.id)
 
   // Using context shortcut
   ctx.leaveChat()
 })
-
+*/
 var debugga = function Text_Debug(chat_id, first_name, text) {
 
 }
