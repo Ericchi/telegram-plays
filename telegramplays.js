@@ -10,7 +10,7 @@ var cron = require('node-cron');
 const tokenTxt = fs.readFileSync("token.txt");
 const bot = new Telegraf(tokenTxt)
 
-ks.setOption('globalDelayPressMillisec', 250);
+ks.setOption('globalDelayPressMillisec', 225);
 ks.setOption('globalDelayBetweenMillisec', 50);
 
 bot.telegram.getMe().then((botInfo) => {
@@ -82,9 +82,33 @@ bot.on('text', (ctx) => {
     case 'destra':
         ks.sendKey('right');
         break;
+    case 'fl':
+    case 'fw':
+        ks.setOption('globalDelayPressMillisec', 50);
+        ks.sendKey('left');
+        ks.setOption('globalDelayPressMillisec', 225);
+        break;
+    case 'fr':
+    case 'fe':
+        ks.setOption('globalDelayPressMillisec', 50);
+        ks.sendKey('right');
+        ks.setOption('globalDelayPressMillisec', 225);
+        break;
+    case 'fu':
+    case 'fn':
+        ks.setOption('globalDelayPressMillisec', 50);
+        ks.sendKey('up');
+        ks.setOption('globalDelayPressMillisec', 225);
+        break;
+    case 'fd':
+    case 'fs':
+        ks.setOption('globalDelayPressMillisec', 50);
+        ks.sendKey('down');
+        ks.setOption('globalDelayPressMillisec', 225);
+        break;
     case 'comandi':
     case 'istruzioni':
-        ctx.reply(`Istruzioni per il gioco:\nStiamo facendo una partita di gruppo a Pokémon Crystal Clear!\nIl gioco si controlla scrivendo nei commenti dei post di EricchiPosting certe parole che corrispondono a certi tasti che poi verranno inviati al Game Boy virtuale. La partita si può vedere attraverso lo streaming in onda sul canale.\n\nEcco la lista dei comandi con accanto la parola corrispondente:\nA: "a"\nB: "b"\nSu: "n" oppure "up" o "su"\nGiù: "s" oppure "down" o "giù" o "giu"\nSinistra: "w" oppure "left" o "sx" o "sinistra"\nDestra: "e" oppure "right" o "dx" o "destra"\nStart: "start"\nSelect: "select"`)
+        ctx.reply(`Istruzioni per il gioco:\nStiamo facendo una partita di gruppo a Pokémon Crystal Clear!\nIl gioco si controlla scrivendo nei commenti dei post di EricchiPosting certe parole che corrispondono a certi tasti che poi verranno inviati al Game Boy virtuale. La partita si può vedere attraverso lo streaming in onda sul canale.\n\nEcco la lista dei comandi con accanto la parola corrispondente:\nA: "a"\nB: "b"\nSu: "n" oppure "up" o "su"\nGiù: "s" oppure "down" o "giù" o "giu"\nSinistra: "w" oppure "left" o "sx" o "sinistra"\nDestra: "e" oppure "right" o "dx" o "destra"\nStart: "start"\nSelect: "select"\n\nEsiste anche un modo per voltarsi in una direzione senza muovere alcun passo:\nVerso l'alto con "fu" o "fn"\nVerso il basso con "fd" o "fs"\nVerso sinistra con "fl" o "fw"\nVerso destra con "fr" o "fe".`)
   }
   
   // Using context shortcut
