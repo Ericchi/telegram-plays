@@ -1,2 +1,2 @@
 # telegram-plays
-Backend for Twitch Plays Pokémon but on Telegram
+Migrated to: https://git.ericchi.moe/ericchi/telegram-plays-tg
